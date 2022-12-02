@@ -2,13 +2,12 @@ with open('TextInputs/dec2.txt') as file:
     input = [line.rstrip() for line in file]
 
 rules = {
-'A':{'X': 3, 'Y': 6, 'Z': 0},
-'B': {'X': 0, 'Y': 3, 'Z': 6},
-'C':{'X': 6, 'Y': 0, 'Z': 3},
-'S':{'X': 1, 'Y': 2, 'Z': 3},
+'A':{'X': 4, 'Y': 8, 'Z': 3},
+'B': {'X': 1, 'Y': 5, 'Z': 9},
+'C':{'X': 7, 'Y': 2, 'Z': 6},
 }
 
-score = sum([rules['S'][game.split()[1]] + rules[game.split()[0]][game.split()[1]] for game in input])
+score = sum([rules[game.split()[0]][game.split()[1]] for game in input])
 
 print(f'Answer 1: {score}')
 
